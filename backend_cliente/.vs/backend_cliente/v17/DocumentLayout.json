@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|c:\\users\\fedem\\documents\\github\\training-bitsion\\backend_cliente\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|c:\\users\\fedem\\documents\\github\\training-bitsion\\backend_cliente\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "WebApiConfig.cs",
               "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\App_Start\\WebApiConfig.cs",
               "RelativeDocumentMoniker": "App_Start\\WebApiConfig.cs",
               "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\App_Start\\WebApiConfig.cs",
               "RelativeToolTip": "App_Start\\WebApiConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAzAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAiwA4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T13:03:11.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
               "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Controllers\\ClienteController.cs",
               "RelativeToolTip": "Controllers\\ClienteController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAqAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T12:31:35.783Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GestorCliente.cs",
               "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\GestorCliente.cs",
               "RelativeDocumentMoniker": "Models\\GestorCliente.cs",
               "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\GestorCliente.cs",
               "RelativeToolTip": "Models\\GestorCliente.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAcwEwAAABnAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T03:19:05.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "Models\\Cliente.cs",
               "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\Cliente.cs",
               "RelativeToolTip": "Models\\Cliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA9wBEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-14T03:10:52.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Web.config",
-              "RelativeDocumentMoniker": "Web.config",
-              "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Web.config",
-              "RelativeToolTip": "Web.config",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAD0AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-03-14T02:55:59.692Z",
               "EditorCaption": ""
             }
           ]
