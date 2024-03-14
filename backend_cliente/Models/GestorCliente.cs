@@ -142,7 +142,7 @@ namespace backend_cliente.Models
             }
         }
 
-        public bool deleteCliente(int id, Cliente cliente)
+        public bool deleteCliente(int id)
         {
             bool res = false;
 
