@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|c:\\users\\fedem\\documents\\github\\training-bitsion\\backend_cliente\\models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GestorCliente.cs",
-              "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\GestorCliente.cs",
-              "RelativeDocumentMoniker": "Models\\GestorCliente.cs",
-              "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\GestorCliente.cs",
-              "RelativeToolTip": "Models\\GestorCliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-14T03:19:05.775Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
