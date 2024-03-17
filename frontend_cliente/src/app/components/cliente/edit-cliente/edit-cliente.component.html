@@ -1,8 +1,8 @@
-<h1>Página principal</h1>
-<button (click)="onClick()" class="btn btn-outline-danger mt-5">Logout</button>
+<h2>Componente EDITAR</h2>
 
-<form [formGroup]="formCliente">
-    <input type="number" id="txt_Id" formControlName="idCliente" hidden>
+<h2>Formulario Cliente</h2>
+<form [formGroup]="formCliente" (ngSubmit)="onUpdateCliente()">
+    <input type="number" id="txt_Id" formControlName="idCliente">
 
     <label for="txt_NombreCompleto">Nombre Completo</label>
     <input type="text" id="txt_NombreCompleto" formControlName="nombreCompleto">
@@ -41,47 +41,5 @@
     <label for="txt_DescripOtraEnfermedad">Descripcion Enfermedad</label>
     <input type="text" id="txt_DescripOtraEnfermedad" formControlName="descripOtraEnfermedad">
 
-    <button (click)="onSubmitCliente()">Guardar</button>
-
-    <button (click)="onUpdateCliente()">Actualizar</button>
-
-    <button (click)="onDeleteCliente()">Eliminar</button>
+    <button type="submit">Guardar</button>
 </form>
-
-<!-- Tabla -->
-<table class="table table-hover">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre Completo</th>
-        <th scope="col">Identificacion</th>
-        <th scope="col">Edad</th>
-        <th scope="col">Genero</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Maneja?</th>
-        <th scope="col">Usa Lentes?</th>
-        <th scope="col">Diabetico?</th>
-        <th scope="col">Otra Enfermedad</th>
-        <th scope="col">Descripcion Enfermedad</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of datatable" (click)="onSetDataCliente(item)">
-        <td>{{ item.idCliente }}</td>
-        <td>{{ item.nombreCompleto }}</td>
-        <td>{{ item.identificacion }}</td>
-        <td>{{ item.edad }}</td>
-        <td>{{ item.genero }}</td>
-        <td>{{ item.estado }}</td>
-        <td>{{ item.maneja }}</td>
-        <td>{{ item.usaLentes }}</td>
-        <td>{{ item.diabetico }}</td>
-        <td>{{ item.otraEnfermedad }}</td>
-        <td>{{ item.descripOtraEnfermedad }}</td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-

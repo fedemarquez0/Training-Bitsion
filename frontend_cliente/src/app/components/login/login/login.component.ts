@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,7 +28,7 @@ export class LoginComponent {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/principal']);
+        this.router.navigate(['']);
       })
       .catch(error => console.log(error));
   }
@@ -37,7 +37,7 @@ export class LoginComponent {
     this.userService.loginWithGoogle()
       .then(response => {
         console.log(response);
-        this.router.navigate(['/principal']);
+        this.router.navigate(['']);
       })
       .catch(error => console.log(error))
   }

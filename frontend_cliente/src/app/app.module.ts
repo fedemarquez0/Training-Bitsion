@@ -3,20 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { PrincipalComponent } from './principal/principal.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { RegisterComponent } from './components/login/register/register.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateClienteComponent } from './components/cliente/create-cliente/create-cliente.component';
+import { EditClienteComponent } from './components/cliente/edit-cliente/edit-cliente.component';
+import { ShowClienteComponent } from './components/cliente/show-cliente/show-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PrincipalComponent
+    CreateClienteComponent,
+    EditClienteComponent,
+    ShowClienteComponent
   ],
   imports: [
     BrowserModule,

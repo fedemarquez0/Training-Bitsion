@@ -16,6 +16,10 @@ export class ClienteService {
     return this.http.get(this.url);
   }
 
+  searchClienteId(id:number){
+    return this.http.get(this.url + `/${id}`);
+  }
+
   addClientes(cliente:Cliente):Observable<Cliente>{
     return this.http.post<Cliente>(this.url, cliente);
   }

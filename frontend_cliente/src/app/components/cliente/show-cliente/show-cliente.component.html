@@ -1,0 +1,45 @@
+<h2>Componente SHOW</h2>
+
+<button (click)="onClickLogout()">Logout</button>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
+<button routerLink="/create">Crear Cliente</button>
+
+<h2>Lista de Clientes</h2>
+<!-- Tabla -->
+<table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Identificacion</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Maneja?</th>
+        <th scope="col">Usa Lentes?</th>
+        <th scope="col">Diabetico?</th>
+        <th scope="col">Otra Enfermedad</th>
+        <th scope="col">Descripcion Enfermedad</th>
+        <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of datatable">
+        <td>{{ item.idCliente }}</td>
+        <td>{{ item.nombreCompleto }}</td>
+        <td>{{ item.identificacion }}</td>
+        <td>{{ item.edad }}</td>
+        <td>{{ item.genero }}</td>
+        <td>{{ item.estado }}</td>
+        <td>{{ item.maneja }}</td>
+        <td>{{ item.usaLentes }}</td>
+        <td>{{ item.diabetico }}</td>
+        <td>{{ item.otraEnfermedad }}</td>
+        <td>{{ item.descripOtraEnfermedad }}</td>
+        <td>
+            <button routerLink="/edit/{{item.idCliente}}">Editar</button>
+            <button (click)="deleteCliente(item.idCliente)">Eliminar</button>
+        </tr>
+    </tbody>
+</table>

@@ -20,9 +20,10 @@ namespace backend_cliente.Controllers
         }
 
         // GET: api/Cliente/5
-        public string Get(int id)
+        public IEnumerable<Cliente> Get(int id)
         {
-            return "value";
+            GestorCliente gCliente = new GestorCliente();
+            return gCliente.searchClienteId(id);
         }
 
         // POST: api/Cliente
