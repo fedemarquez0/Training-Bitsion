@@ -26,11 +26,18 @@ namespace backend_cliente.Controllers
             return gCliente.searchClienteId(id);
         }
 
-        [Route("api/Cliente/search/{data}")]
-        public IEnumerable<Cliente> Get(string data)
+        [Route("api/Cliente/search")]
+        public IEnumerable<Cliente> Get([FromUri] string data)
         {
             GestorCliente gCliente = new GestorCliente();
-            return gCliente.searchCliente(data);
+            if (String.IsNullOrEmpty(data))
+            {
+                return gCliente.getClientes();
+            }
+            else
+            {
+                return gCliente.searchCliente(data);
+            }
         }
 
         // POST: api/Cliente

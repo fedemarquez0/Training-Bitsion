@@ -21,7 +21,7 @@ export class ClienteService {
   }
 
   searchCliente(data:string){
-    return this.http.get(this.url + `/search/${data}`);
+    return this.http.get(this.url + `/search/?data=${data}`);
   }
 
   addClientes(cliente:Cliente):Observable<Cliente>{
