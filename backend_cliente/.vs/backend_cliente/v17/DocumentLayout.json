@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|c:\\users\\fedem\\documents\\github\\training-bitsion\\backend_cliente\\models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\gestorcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|c:\\users\\fedem\\documents\\github\\training-bitsion\\backend_cliente\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370F3CA8-89D7-4D30-9AD6-4837F26EB2DC}|backend_cliente.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,9 +30,9 @@
               "Title": "ClienteController.cs",
               "DocumentMoniker": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Controllers\\ClienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Controllers\\ClienteController.cs*",
-              "RelativeToolTip": "Controllers\\ClienteController.cs*",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAJAAAA",
+              "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "Controllers\\ClienteController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T21:58:32.617Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Models\\Cliente.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAUwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T21:58:22.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-17T21:58:22.3Z"
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "Models\\GestorCliente.cs",
               "ToolTip": "C:\\Users\\fedem\\Documents\\GitHub\\Training-Bitsion\\backend_cliente\\Models\\GestorCliente.cs",
               "RelativeToolTip": "Models\\GestorCliente.cs",
-              "ViewState": "AQIAAKoAAAAAAAAAAAAIwLMAAAAsAAAA",
+              "ViewState": "AQIAANMAAAAAAAAAAAAkwOkAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T21:51:53.291Z",
               "EditorCaption": ""

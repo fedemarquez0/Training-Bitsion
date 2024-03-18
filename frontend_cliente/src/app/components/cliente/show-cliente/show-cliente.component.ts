@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ClienteService } from '../../../services/cliente.service';
-import { Cliente } from '../../../models/cliente';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
@@ -11,13 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ShowClienteComponent {
   datatable: any = [];
+  searchText: string = '';
 
-  clientePadre:Cliente = new Cliente();
-
-  constructor(private clienteService:ClienteService, private userService: UserService, private router: Router) {
-    this.clientePadre.idCliente = 17;
-    this.clientePadre.nombreCompleto = 'Juan Darre';
-   }
+  constructor(private clienteService:ClienteService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.onDataTable();
@@ -46,6 +41,13 @@ export class ShowClienteComponent {
       } else{
         alert(`El cliente no se ha eliminado correctamente :(`);
       }
+    });
+  }
+
+  searchCliente(){
+    this.clienteService.searchCliente(this.searchText).subscribe(res => {
+      this.datatable = res;
+      console.log(res);
     });
   }
 }

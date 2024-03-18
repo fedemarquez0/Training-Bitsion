@@ -6,6 +6,12 @@
 <button routerLink="/create">Crear Cliente</button>
 
 <h2>Lista de Clientes</h2>
+
+<!-- Buscador -->
+<input type="text" [(ngModel)]="searchText" placeholder="Buscar..." />
+<button (click)="searchCliente()">Buscar</button>
+<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+
 <!-- Tabla -->
 <table class="table table-hover">
     <thead>

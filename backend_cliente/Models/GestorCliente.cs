@@ -221,6 +221,50 @@ namespace backend_cliente.Models
             return clientes;
         }
 
+        public List<Cliente> searchCliente(string data)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            string strConn = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+
+            using (SqlConnection conn = new SqlConnection(strConn))
+            {
+                conn.Open();
+
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "Cliente_Search";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@data", data);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = dr.GetInt32(0);
+                    string nombreCompleto = dr.GetString(1).Trim();
+                    string identificacion = dr.GetString(2).Trim();
+                    int edad = dr.GetInt32(3);
+                    string genero = dr.GetString(4).Trim();
+                    string estado = dr.GetString(5).Trim();
+                    bool maneja = dr.GetBoolean(6);
+                    bool usaLentes = dr.GetBoolean(7);
+                    bool diabetico = dr.GetBoolean(8);
+                    bool otraEnfermedad = dr.GetBoolean(9);
+                    string descOtraEnfermedad = dr.GetString(10).Trim();
+
+                    Cliente cliente = new Cliente(id, nombreCompleto, identificacion, edad, genero, estado, maneja, usaLentes, diabetico, otraEnfermedad, descOtraEnfermedad);
+
+                    clientes.Add(cliente);
+                }
+
+                dr.Close();
+                conn.Close();
+
+            }
+
+            return clientes;
+        }
+
 
     }
 }

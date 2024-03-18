@@ -20,6 +20,10 @@ export class ClienteService {
     return this.http.get(this.url + `/${id}`);
   }
 
+  searchCliente(data:string){
+    return this.http.get(this.url + `/search/${data}`);
+  }
+
   addClientes(cliente:Cliente):Observable<Cliente>{
     return this.http.post<Cliente>(this.url, cliente);
   }
