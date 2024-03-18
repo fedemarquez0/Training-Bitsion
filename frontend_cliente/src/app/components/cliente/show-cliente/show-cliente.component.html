@@ -1,22 +1,23 @@
-<h2>Componente SHOW</h2>
+<layout-sidebar>
+    
+    <h2>Lista de Clientes</h2>
+    
+    <!-- Buscador -->
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+        <input type="text" [(ngModel)]="searchText" nz-input placeholder="Ingrese un texto" />
+      </nz-input-group>
+      <ng-template #suffixIconButton>
+        <button (click)="searchCliente()" nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
+      </ng-template>
+    <nz-divider></nz-divider>
 
-<button (click)="onClickLogout()">Logout</button>
-<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-
-<button routerLink="/create">Crear Cliente</button>
-
-<h2>Lista de Clientes</h2>
-
-<!-- Buscador -->
-<input type="text" [(ngModel)]="searchText" placeholder="Buscar..." />
-<button (click)="searchCliente()">Buscar</button>
-<p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-
-<!-- Tabla -->
-<table class="table table-hover">
+    <!-- Tabla -->
+    <button nz-button nzType="primary" (click)="openDrawerNew()">Nuevo</button>
+    <br /><br />
+<nz-table #clientList [nzData]="datatable" [nzLoading]="loading$ | async">
     <thead>
         <tr>
-        <th scope="col">#</th>
+            <th scope="col">#</th>
         <th scope="col">Nombre Completo</th>
         <th scope="col">Identificacion</th>
         <th scope="col">Edad</th>
@@ -28,24 +29,27 @@
         <th scope="col">Otra Enfermedad</th>
         <th scope="col">Descripcion Enfermedad</th>
         <th scope="col">Acciones</th>
-        </tr>
+    </tr>
     </thead>
     <tbody>
         <tr *ngFor="let item of datatable">
-        <td>{{ item.idCliente }}</td>
+            <td>{{ item.idCliente }}</td>
         <td>{{ item.nombreCompleto }}</td>
         <td>{{ item.identificacion }}</td>
         <td>{{ item.edad }}</td>
         <td>{{ item.genero }}</td>
         <td>{{ item.estado }}</td>
-        <td>{{ item.maneja }}</td>
+        <td><span nz-icon [nzType]="item.maneja ? 'check-circle' : 'close-circle'" nzTheme="outline"></span></td>
         <td>{{ item.usaLentes }}</td>
         <td>{{ item.diabetico }}</td>
         <td>{{ item.otraEnfermedad }}</td>
         <td>{{ item.descripOtraEnfermedad }}</td>
         <td>
-            <button routerLink="/edit/{{item.idCliente}}">Editar</button>
-            <button (click)="deleteCliente(item.idCliente)">Eliminar</button>
+            <button nz-button nzType="link" (click)="openDrawerEdit(item.idCliente)">Editar</button>
+            <nz-divider nzType="vertical"></nz-divider>
+            <button nz-button nzType="link" (click)="deleteCliente(item.idCliente)">Eliminar</button>
         </tr>
     </tbody>
-</table>
+</nz-table>
+
+</layout-sidebar>

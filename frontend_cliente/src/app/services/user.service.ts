@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+    loading$ = new BehaviorSubject<boolean>(false);
 
   constructor(private auth:Auth) { }
 
@@ -17,7 +19,8 @@ export class UserService {
   }
 
   loginWithGoogle(){
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
+    this.loading$.next(true);
+    return signInWithPopup(this.auth, new GoogleAuthProvider()).finally(() => this.loading$.next(false));
   }
 
   logout(){

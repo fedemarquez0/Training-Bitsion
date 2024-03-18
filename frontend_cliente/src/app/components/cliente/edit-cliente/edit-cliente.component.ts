@@ -12,8 +12,10 @@ import { Cliente } from '../../../models/cliente';
 export class EditClienteComponent {
   formCliente: FormGroup;
   cliente: Cliente = new Cliente();
+  @Input() id: number = 0;
 
   constructor(private clienteService:ClienteService, private router: Router, private route: ActivatedRoute) {
+    
     this.formCliente = new FormGroup({
       idCliente: new FormControl(''),
       nombreCompleto: new FormControl(''),
@@ -30,8 +32,7 @@ export class EditClienteComponent {
   }
 
   ngOnInit(): void {
-    let id = Number(this.route.snapshot.paramMap.get('id'));
-    this.clienteService.searchClienteId(id).subscribe((response: any) => {
+    this.clienteService.searchClienteId(this.id).subscribe((response: any) => {
       const clienteData = response as Array<Cliente>;
       this.cliente = clienteData[0];
       this.onSetDataCliente(this.cliente);

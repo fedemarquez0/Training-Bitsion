@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   formReg: FormGroup;
+  loading$ = this.userService.loading$;
 
   constructor(
     private userService: UserService,

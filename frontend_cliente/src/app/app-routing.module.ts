@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'show', component: ShowClienteComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
   { path: 'create', component: CreateClienteComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
-  { path: 'edit/:id', component: EditClienteComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))}
+  { path: 'edit/:id', component: EditClienteComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
 ];
 
 @NgModule({
