@@ -41,9 +41,9 @@ export class ShowClienteComponent {
 
   deleteCliente(id: number){
     this.modal.confirm({
-      nzTitle: 'Are you sure delete this task?',
-      nzContent: '<b style="color: red;">Some descriptions</b>',
-      nzOkText: 'Yes',
+      nzTitle: 'Estas seguro que desea eliminar este cliente?',
+      nzContent: '<b style="color: red;">Esta accion no se puede deshacer!!</b>',
+      nzOkText: 'Sí, estoy seguro',
       nzOkType: 'primary',
       nzOkDanger: true,
       nzOnOk: () => {
@@ -52,14 +52,14 @@ export class ShowClienteComponent {
             this.onDataTable();
             this.notification.create(
               'success',
-              'Notification Title',
-              'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+              'Eliminar cliente',
+              'Cliente eliminado correctamente.'
             );
           } else{
             this.notification.create(
               'error',
-              'Notification Title',
-              'This is the content of the notification. This is the content of the notification. This is the content of the notification.'
+              'Eliminar cliente',
+              'Error al eliminar cliente, intente mas tarde.'
             );
           }
         });
@@ -80,6 +80,7 @@ export class ShowClienteComponent {
   openDrawerEdit(id: number): void {
     this.drawerService.create({
       nzTitle: 'Editar Cliente',
+      nzWidth: 750,
       nzContent: EditClienteComponent,
       nzContentParams: {
         id: id
@@ -90,7 +91,9 @@ export class ShowClienteComponent {
   openDrawerNew(): void {
     this.drawerService.create({
       nzTitle: 'Nuevo cliente',
+      nzWidth: 750,
       nzContent: CreateClienteComponent
     });
   }
+  
 }

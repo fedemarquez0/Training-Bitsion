@@ -6,13 +6,13 @@
       [(nzCollapsed)]="isCollapsed"
       [nzTrigger]="null">
       <div class="sidebar-logo">
-        <a href="https://ng.ant.design/" target="_blank">
-          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-          <h1>Ant Design Of Angular</h1>
+        <a routerLink="/show">
+          <span nz-icon nzType="safety" nzTheme="outline"></span>
+          <h1>Ficticia S.A.</h1>
         </a>
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-submenu nzOpen nzTitle="Usuarios" nzIcon="user">
+        <li nz-submenu nzOpen nzTitle="Clientes" nzIcon="user">
           <ul>
             <li nz-menu-item nzMatchRouter>
               <a routerLink="/show">Listado</a>
@@ -31,7 +31,7 @@
               ></span>
           </span>
           <div class="header-right">
-            <button nz-button nzType="link" (click)="onClickLogout()">Logout</button>
+            <button nz-button nzType="link" (click)="onClickLogout()">Logout <span nz-icon nzType="logout" nzTheme="outline"></span></button>
           </div>
         </div>
       </nz-header>

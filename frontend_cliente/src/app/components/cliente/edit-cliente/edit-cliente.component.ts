@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ClienteService } from '../../../services/cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../../../models/cliente';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-edit-cliente',
@@ -13,8 +14,9 @@ export class EditClienteComponent {
   formCliente: FormGroup;
   cliente: Cliente = new Cliente();
   @Input() id: number = 0;
+  checkEnfermedad: boolean = false;
 
-  constructor(private clienteService:ClienteService, private router: Router, private route: ActivatedRoute) {
+  constructor(private clienteService:ClienteService, private router: Router, private route: ActivatedRoute, private notification: NzNotificationService) {
     
     this.formCliente = new FormGroup({
       idCliente: new FormControl(''),
@@ -70,11 +72,29 @@ export class EditClienteComponent {
 
     this.clienteService.updateClientes(cliente.idCliente, cliente).subscribe(res => {
       if(res){
-        alert(`El cliente ${cliente.nombreCompleto} se ha actualizado correctamente`);
-        this.router.navigate(['/show']);
+        this.notification.create(
+          'success',
+          'Editar cliente',
+          'Cliente editado correctamente.'
+        );
       } else{
-        alert(`El cliente ${cliente.nombreCompleto} no se ha actualizado correctamente :(`);
+        this.notification.create(
+          'error',
+          'Editar cliente',
+          'Error al editar el cliente, intente mas tarde.'
+        );
       }
     });
+  }
+
+  checkboxEnfermedad(){
+    if(this.checkEnfermedad){
+      //si el checkbox esta seleccionado, se habilita el campo descripOtraEnfermedad
+      this.formCliente.get('descripOtraEnfermedad')?.enable();
+    } else{
+      //si el checkbox no esta seleccionado, se deshabilita el campo descripOtraEnfermedad
+      this.formCliente.get('descripOtraEnfermedad')?.setValue('');
+      this.formCliente.get('descripOtraEnfermedad')?.disable();
+    }
   }
 }

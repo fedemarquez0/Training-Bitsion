@@ -1,45 +1,110 @@
-<h2>Componente EDITAR</h2>
+<h2>Formulario Cliente</h2><br>
 
-<h2>Formulario Cliente</h2>
-<form [formGroup]="formCliente" (ngSubmit)="onUpdateCliente()">
-    <input type="number" id="txt_Id" formControlName="idCliente">
 
-    <label for="txt_NombreCompleto">Nombre Completo</label>
-    <input type="text" id="txt_NombreCompleto" formControlName="nombreCompleto">
+<form nz-form [formGroup]="formCliente" (ngSubmit)="onUpdateCliente()">
 
-    <label for="txt_Identificacion">Identificacion</label>
-    <input type="text" id="txt_Identificacion" formControlName="identificacion">
+    <input type="number" id="txt_Id" formControlName="idCliente" hidden>
 
-    <label for="txt_Edad">Edad</label>
-    <input type="number" id="txt_Edad" formControlName="edad">
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_NombreCompleto">Nombre Completo</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorNombreCompleto">
+        <input nz-input formControlName="nombreCompleto" id="txt_NombreCompleto"/>
+      </nz-form-control>
+    </nz-form-item>
 
-    <label for="txt_Genero">Genero</label>
-    <select name="genero" id="txt_Genero" formControlName="genero">
-        <option value="Masculino">Masculino</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Otro">Otro</option>
-    </select>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Identificacion">Identificacion</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorIdentificacion">
+          <input nz-input formControlName="identificacion" id="txt_Identificacion" />
+        </nz-form-control>
+    </nz-form-item>
 
-    <label for="txt_Estado">Estado</label>
-    <select name="estado" id="txt_Estado" formControlName="estado">
-        <option value="Activo">Activo</option>
-        <option value="Inactivo">Inactivo</option>
-    </select>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Edad">Edad</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="El campo es obligatorio">
+            <nz-input-number [nzMin]="1" [nzMax]="120" [nzStep]="1" formControlName="edad"></nz-input-number>
+        </nz-form-control>
+    </nz-form-item>
 
-    <input type="checkbox" id="txt_Maneja" formControlName="maneja">
-    <label for="txt_Maneja">Maneja?</label>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Genero">Genero</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="El campo es obligatorio">
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Seleccione un genero" formControlName="genero">
+                <nz-option nzLabel="Masculino" nzValue="Masculino"></nz-option>
+                <nz-option nzLabel="Femenino" nzValue="Femenino"></nz-option>
+                <nz-option nzLabel="Otro" nzValue="Otro"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
 
-    <input type="checkbox" id="txt_UsaLentes" formControlName="usaLentes">
-    <label for="txt_UsaLentes">Usa Lentes?</label>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Estado">Estado</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="El campo es obligatorio">
+            <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Seleccione un estado" formControlName="estado">
+                <nz-option nzLabel="Activo" nzValue="Activo"></nz-option>
+                <nz-option nzLabel="Inactivo" nzValue="Inactivo"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
 
-    <input type="checkbox" id="txt_Diabetico" formControlName="diabetico">
-    <label for="txt_Diabetico">Diabetico?</label>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Maneja">Maneja?</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <label nz-checkbox formControlName="maneja"></label>
+        </nz-form-control>
+    </nz-form-item>
 
-    <input type="checkbox" id="txt_OtraEnfermedad" formControlName="otraEnfermedad">
-    <label for="txt_OtraEnfermedad">Otra Enfermedad?</label>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_UsaLentes">Usa Lentes?</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <label nz-checkbox formControlName="usaLentes"></label>
+        </nz-form-control>
+    </nz-form-item>
 
-    <label for="txt_DescripOtraEnfermedad">Descripcion Enfermedad</label>
-    <input type="text" id="txt_DescripOtraEnfermedad" formControlName="descripOtraEnfermedad">
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_Diabetico">Diabetico?</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <label nz-checkbox formControlName="diabetico"></label>
+        </nz-form-control>
+    </nz-form-item>
 
-    <button type="submit">Guardar</button>
-</form>
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_OtraEnfermedad">Otra Enfermedad?</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <label nz-checkbox [(ngModel)]="checkEnfermedad" (ngModelChange)="checkboxEnfermedad()" formControlName="otraEnfermedad"></label>
+        </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="txt_DescripOtraEnfermedad">Descripcion Enfermedad</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="descripOtraEnfermedad" id="txt_DescripOtraEnfermedad"/>
+        </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item nz-row class="register-area">
+      <nz-form-control [nzSpan]="14" [nzOffset]="6">
+        <button nz-button nzType="primary">Guardar</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+
+  <ng-template #errorNombreCompleto let-control>
+    @if (control.errors?.['maxlength']) {
+      El nombre es muy largo
+    }
+    @if (control.errors?.['required']) {
+        Este campo es requerido
+    }
+  </ng-template>
+
+  <ng-template #errorIdentificacion let-control>
+    @if (control.errors?.['maxlength']) {
+      El nombre es muy largo
+    }
+    @if (control.errors?.['required']) {
+        Este campo es requerido
+    }
+  </ng-template>
+
