@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ClienteService } from '../../../services/cliente.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../../../models/cliente';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 
 @Component({
   selector: 'app-edit-cliente',
   templateUrl: './edit-cliente.component.html',
-  styleUrl: './edit-cliente.component.css'
+  styleUrl: './edit-cliente.component.css',
 })
 export class EditClienteComponent {
   formCliente: FormGroup;
@@ -16,8 +16,11 @@ export class EditClienteComponent {
   @Input() id: number = 0;
   checkEnfermedad: boolean = false;
 
-  constructor(private clienteService:ClienteService, private router: Router, private route: ActivatedRoute, private notification: NzNotificationService) {
-    
+  constructor(
+    private clienteService: ClienteService,
+    private notification: NzNotificationService,
+    private drawerRef: NzDrawerRef<string>
+  ) {
     this.formCliente = new FormGroup({
       idCliente: new FormControl(''),
       nombreCompleto: new FormControl(''),
@@ -41,7 +44,7 @@ export class EditClienteComponent {
     });
   }
 
-  onSetDataCliente(cliente: Cliente){
+  onSetDataCliente(cliente: Cliente) {
     this.formCliente.get('idCliente')?.setValue(cliente.idCliente);
     this.formCliente.get('nombreCompleto')?.setValue(cliente.nombreCompleto);
     this.formCliente.get('identificacion')?.setValue(cliente.identificacion);
@@ -52,46 +55,59 @@ export class EditClienteComponent {
     this.formCliente.get('usaLentes')?.setValue(cliente.usaLentes);
     this.formCliente.get('diabetico')?.setValue(cliente.diabetico);
     this.formCliente.get('otraEnfermedad')?.setValue(cliente.otraEnfermedad);
-    this.formCliente.get('descripOtraEnfermedad')?.setValue(cliente.descripOtraEnfermedad);
+    this.formCliente
+      .get('descripOtraEnfermedad')
+      ?.setValue(cliente.descripOtraEnfermedad);
   }
 
-  onUpdateCliente(){
-    let cliente: Cliente = {
-      idCliente: this.formCliente.get('idCliente')?.value ?? 0,
-      nombreCompleto: this.formCliente.get('nombreCompleto')?.value ?? '',
-      identificacion: this.formCliente.get('identificacion')?.value ?? '',
-      edad: this.formCliente.get('edad')?.value ?? '',
-      genero: this.formCliente.get('genero')?.value ?? '',
-      estado: this.formCliente.get('estado')?.value ?? '',
-      maneja: this.formCliente.get('maneja')?.value ?? false,
-      usaLentes: this.formCliente.get('usaLentes')?.value ?? false,
-      diabetico: this.formCliente.get('diabetico')?.value ?? false,
-      otraEnfermedad: this.formCliente.get('otraEnfermedad')?.value ?? false,
-      descripOtraEnfermedad: this.formCliente.get('descripOtraEnfermedad')?.value ?? ''
-    };
+  onUpdateCliente() {
+    if (this.formCliente.valid) {
+      let cliente: Cliente = {
+        idCliente: this.formCliente.get('idCliente')?.value ?? 0,
+        nombreCompleto: this.formCliente.get('nombreCompleto')?.value ?? '',
+        identificacion: this.formCliente.get('identificacion')?.value ?? '',
+        edad: this.formCliente.get('edad')?.value ?? '',
+        genero: this.formCliente.get('genero')?.value ?? '',
+        estado: this.formCliente.get('estado')?.value ?? '',
+        maneja: this.formCliente.get('maneja')?.value ?? false,
+        usaLentes: this.formCliente.get('usaLentes')?.value ?? false,
+        diabetico: this.formCliente.get('diabetico')?.value ?? false,
+        otraEnfermedad: this.formCliente.get('otraEnfermedad')?.value ?? false,
+        descripOtraEnfermedad:
+          this.formCliente.get('descripOtraEnfermedad')?.value ?? '',
+      };
 
-    this.clienteService.updateClientes(cliente.idCliente, cliente).subscribe(res => {
-      if(res){
-        this.notification.create(
-          'success',
-          'Editar cliente',
-          'Cliente editado correctamente.'
-        );
-      } else{
-        this.notification.create(
-          'error',
-          'Editar cliente',
-          'Error al editar el cliente, intente mas tarde.'
-        );
-      }
-    });
+      this.clienteService
+        .updateClientes(cliente.idCliente, cliente)
+        .subscribe((res) => {
+          if (res) {
+            this.drawerRef.close(cliente);
+            this.notification.create(
+              'success',
+              'Editar cliente',
+              'Cliente editado correctamente.'
+            );
+          } else {
+            this.notification.create(
+              'error',
+              'Editar cliente',
+              'Error al editar el cliente, intente mas tarde.'
+            );
+          }
+        });
+    } else {
+      Object.values(this.formCliente.controls).forEach((control) => {
+        control.markAsDirty();
+        control.updateValueAndValidity({ onlySelf: false, emitEvent: true });
+      });
+    }
   }
 
-  checkboxEnfermedad(){
-    if(this.checkEnfermedad){
+  checkboxEnfermedad() {
+    if (this.checkEnfermedad) {
       //si el checkbox esta seleccionado, se habilita el campo descripOtraEnfermedad
       this.formCliente.get('descripOtraEnfermedad')?.enable();
-    } else{
+    } else {
       //si el checkbox no esta seleccionado, se deshabilita el campo descripOtraEnfermedad
       this.formCliente.get('descripOtraEnfermedad')?.setValue('');
       this.formCliente.get('descripOtraEnfermedad')?.disable();

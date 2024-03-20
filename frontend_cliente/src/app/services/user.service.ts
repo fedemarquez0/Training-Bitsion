@@ -6,24 +6,24 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-    loading$ = new BehaviorSubject<boolean>(false);
+  loading$ = new BehaviorSubject<boolean>(false);
 
-  constructor(private auth:Auth) { }
+  constructor(private auth: Auth) { }
 
-  register({email, password}:any){
+  register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  login({email, password}:any){
+  login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle(){
+  loginWithGoogle() {
     this.loading$.next(true);
     return signInWithPopup(this.auth, new GoogleAuthProvider()).finally(() => this.loading$.next(false));
   }
 
-  logout(){
+  logout() {
     return signOut(this.auth);
   }
 

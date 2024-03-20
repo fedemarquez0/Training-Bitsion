@@ -1,23 +1,22 @@
 <layout-sidebar>
-    
-    <h2>Lista de Clientes</h2>
-    
-    <!-- Buscador -->
-    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
-        <input type="text" [(ngModel)]="searchText" nz-input (keyup.enter)="searchCliente()" placeholder="Ingrese un texto" />
-      </nz-input-group>
-      <ng-template #suffixIconButton>
-        <button (click)="searchCliente()" nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
-      </ng-template>
-    <nz-divider></nz-divider>
+  <h2>Lista de Clientes</h2>
 
-    <!-- Tabla -->
-    <button nz-button nzType="primary" (click)="openDrawerNew()">Nuevo</button>
-    <br /><br />
-<nz-table #clientList [nzData]="datatable" [nzLoading]="loading$ | async">
+  <!-- Buscador -->
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+    <input type="text" [(ngModel)]="searchText" nz-input (keyup.enter)="searchCliente()" placeholder="Ingrese un texto" />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button (click)="searchCliente()" nz-button nzType="primary" nzSearch><span nz-icon nzType="search"></span></button>
+  </ng-template>
+  <nz-divider></nz-divider>
+
+  <!-- Tabla -->
+  <button nz-button nzType="primary" (click)="openDrawerNew()">Nuevo</button>
+  <br/><br/>
+  <nz-table #clientList [nzData]="datatable" [nzLoading]="loading$ | async">
     <thead>
-        <tr>
-            <th scope="col">#</th>
+      <tr>
+        <th scope="col">#</th>
         <th scope="col">Nombre Completo</th>
         <th scope="col">Identificacion</th>
         <th scope="col">Edad</th>
@@ -29,27 +28,32 @@
         <th scope="col">Otra Enfermedad</th>
         <th scope="col">Descripcion Enfermedad</th>
         <th scope="col">Acciones</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of datatable">
-            <td>{{ item.idCliente }}</td>
-            <td>{{ item.nombreCompleto }}</td>
-            <td>{{ item.identificacion }}</td>
-            <td>{{ item.edad }}</td>
-            <td>{{ item.genero }}</td>
-            <td>{{ item.estado }}</td>
-            <td><span nz-icon [nzType]="item.maneja ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="item.maneja ? '#52c41a' : '#FF0000'"></span></td>
-            <td><span nz-icon [nzType]="item.usaLentes ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="item.usaLentes ? '#52c41a' : '#FF0000'"></span></td>
-            <td><span nz-icon [nzType]="item.diabetico ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="item.diabetico ? '#52c41a' : '#FF0000'"></span></td>
-            <td><span nz-icon [nzType]="item.otraEnfermedad ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'" [nzTwotoneColor]="item.otraEnfermedad ? '#52c41a' : '#FF0000'"></span></td>
-            <td>{{ item.descripOtraEnfermedad }}</td>
-            <td>
-            <button nz-button nzType="text" (click)="openDrawerEdit(item.idCliente)" style='color: rgb(255, 217, 0);'><span nz-icon nzType="edit"></span></button>
-            <nz-divider nzType="vertical"></nz-divider>
-            <button nz-button nzType="text" (click)="deleteCliente(item.idCliente)" nzDanger><span nz-icon nzType="delete"></span></button>
-        </tr>
+      <tr *ngFor="let item of datatable">
+        <td>{{ item.idCliente }}</td>
+        <td>{{ item.nombreCompleto }}</td>
+        <td>{{ item.identificacion }}</td>
+        <td>{{ item.edad }}</td>
+        <td>{{ item.genero }}</td>
+        <td>{{ item.estado }}</td>
+        <td><span nz-icon [nzType]="item.maneja ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'"
+            [nzTwotoneColor]="item.maneja ? '#52c41a' : '#FF0000'"></span></td>
+        <td><span nz-icon [nzType]="item.usaLentes ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'"
+            [nzTwotoneColor]="item.usaLentes ? '#52c41a' : '#FF0000'"></span></td>
+        <td><span nz-icon [nzType]="item.diabetico ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'"
+            [nzTwotoneColor]="item.diabetico ? '#52c41a' : '#FF0000'"></span></td>
+        <td><span nz-icon [nzType]="item.otraEnfermedad ? 'check-circle' : 'close-circle'" [nzTheme]="'twotone'"
+            [nzTwotoneColor]="item.otraEnfermedad ? '#52c41a' : '#FF0000'"></span></td>
+        <td>{{ item.descripOtraEnfermedad }}</td>
+        <td>
+          <button nz-button nzType="text" (click)="openDrawerEdit(item.idCliente)"
+            style='color: rgb(255, 217, 0);'><span nz-icon nzType="edit"></span></button>
+          <nz-divider nzType="vertical"></nz-divider>
+          <button nz-button nzType="text" (click)="deleteCliente(item.idCliente)" nzDanger><span nz-icon
+              nzType="delete"></span></button>
+      </tr>
     </tbody>
-</nz-table>
-
+  </nz-table>
 </layout-sidebar>

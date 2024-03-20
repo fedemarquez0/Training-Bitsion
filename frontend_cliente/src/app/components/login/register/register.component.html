@@ -1,39 +1,42 @@
 <nz-card class="login">
-<h2>Registro de usuario</h2>
-<form [formGroup]="formReg" class="login-form" (ngSubmit)="signup()">
+  <h2>Registro de usuario</h2>
+  <form [formGroup]="formReg" class="login-form" (ngSubmit)="signup()">
     <nz-form-item>
-        <nz-form-control [nzErrorTip]="errorEmail">
-          <nz-input-group nzPrefixIcon="user">
-            <input type="text" nz-input formControlName="email" placeholder="usuario@empresa.com" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-control [nzErrorTip]="errorPassword">
-          <nz-input-group nzPrefixIcon="lock">
-            <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <button nz-button class="login-form-button login-form-margin" nzType="primary" [nzLoading]="loading$ | async">Crear cuenta</button>
-      <a nz-button type="button" class="login-form-button login-form-margin" nzType="link" routerLink="/login">Ya tengo cuenta</a>
-</form>
-</nz-card>
-<ng-template #errorEmail let-control>
-    <ng-container *ngIf="control.hasError('required')">
-      Este campo es requerido
-    </ng-container>
-    <ng-container *ngIf="control.hasError('email')">
-      Este campo debe ser un email
-    </ng-container>
-  </ng-template>
+      <nz-form-control [nzErrorTip]="errorEmail">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="email" placeholder="usuario@empresa.com" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
 
-    <ng-template #errorPassword let-control>
-        <ng-container *ngIf="control.hasError('required')">
-        Este campo es requerido
-        </ng-container>
-        <!-- Validar si tiene minLenght -->
-        <ng-container *ngIf="control.hasError('minlength')">
-        Este campo debe tener al menos 6 caracteres
-        </ng-container>
-    </ng-template>
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="errorPassword">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    
+    <button nz-button class="login-form-button login-form-margin" nzType="primary" [nzLoading]="loading$ | async">Crear cuenta</button>
+    <a nz-button type="button" class="login-form-button login-form-margin" nzType="link" routerLink="/login">Ya tengo cuenta</a>
+  </form>
+</nz-card>
+
+<ng-template #errorEmail let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    Este campo es requerido
+  </ng-container>
+  <ng-container *ngIf="control.hasError('email')">
+    Este campo debe ser un email
+  </ng-container>
+</ng-template>
+
+<ng-template #errorPassword let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    Este campo es requerido
+  </ng-container>
+  <!-- Validar si tiene minLenght -->
+  <ng-container *ngIf="control.hasError('minlength')">
+    Este campo debe tener al menos 6 caracteres
+  </ng-container>
+</ng-template>

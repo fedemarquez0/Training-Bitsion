@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "5a31cfa9-7aa9-4f13-91c8-f53ef47c85b7",
+		"name": "Clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33730515"
+	},
+	"item": [
+		{
+			"name": "Get All Clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cliente by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente/13",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente/search?data=12",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente",
+						"search"
+					],
+					"query": [
+						{
+							"key": "data",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreCompleto\":\"Juan de los Palotes\",\r\n    \"identificacion\":\"62362832\",\r\n    \"edad\":\"27\",\r\n    \"genero\":\"Masculino\",\r\n    \"estado\":\"Activo\",\r\n    \"maneja\":\"true\",\r\n    \"usaLentes\":\"false\",\r\n    \"diabetico\":\"false\",\r\n    \"otraEnfermedad\":\"true\",\r\n    \"descripOtraEnfermedad\":\"Hipertenso\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 14,\r\n    \"nombreCompleto\": \"Federica Lopez\",\r\n    \"identificacion\": \"342342\",\r\n    \"edad\": 32,\r\n    \"genero\": \"Femenino\",\r\n    \"estado\": \"Activo\",\r\n    \"maneja\": true,\r\n    \"usaLentes\": false,\r\n    \"diabetico\": true,\r\n    \"otraEnfermedad\": false,\r\n    \"descripOtraEnfermedad\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente/14",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44314/api/Cliente/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44314",
+					"path": [
+						"api",
+						"Cliente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

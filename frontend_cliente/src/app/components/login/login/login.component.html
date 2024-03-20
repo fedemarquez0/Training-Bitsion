@@ -1,43 +1,47 @@
 <nz-card class="login">
-
-<h2>Login de usuario</h2>
-<form nz-form [formGroup]="formLogin" class="login-form" (ngSubmit)="onSubmit()">
-
+  <h2>Login de usuario</h2>
+  <form nz-form [formGroup]="formLogin" class="login-form" (ngSubmit)="onSubmit()">
     <nz-form-item>
-        <nz-form-control [nzErrorTip]="errorEmail">
-          <nz-input-group nzPrefixIcon="user">
-            <input type="text" nz-input formControlName="email" placeholder="Ej: usuario@empresa.com" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-control [nzErrorTip]="errorPassword">
-          <nz-input-group nzPrefixIcon="lock">
-            <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
-          </nz-input-group>
-        </nz-form-control>
-      </nz-form-item>
-      <button nz-button class="login-form-button login-form-margin" nzType="primary">Iniciar sesión</button>
-      <p style="text-align: center;">ó</p>
-      <button nz-button type="button" class="login-form-button login-form-margin" nzType="default" (click)="onClick()" [nzLoading]="loading$ | async"><span nz-icon nzType="google" nzTheme="outline"></span> Iniciar sesión con Google</button>
-      <a nz-button type="button" class="login-form-button login-form-margin" nzType="link" routerLink="/register">Crear una cuenta</a>
-</form>
+      <nz-form-control [nzErrorTip]="errorEmail">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="email" placeholder="Ej: usuario@empresa.com" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-control [nzErrorTip]="errorPassword">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    
+    <button nz-button class="login-form-button login-form-margin" nzType="primary">Iniciar sesión</button>
+    
+    <p style="text-align: center;">ó</p>
+    
+    <button nz-button type="button" class="login-form-button login-form-margin" nzType="default" (click)="onClick()"
+      [nzLoading]="loading$ | async"><span nz-icon nzType="google" nzTheme="outline"></span> Iniciar sesión con Google</button>
+    <a nz-button type="button" class="login-form-button login-form-margin" nzType="link" routerLink="/register">Crear una cuenta</a>
+  </form>
 </nz-card>
-<ng-template #errorEmail let-control>
-    <ng-container *ngIf="control.hasError('required')">
-      Este campo es requerido
-    </ng-container>
-    <ng-container *ngIf="control.hasError('email')">
-      Este campo debe ser un email
-    </ng-container>
-  </ng-template>
 
-    <ng-template #errorPassword let-control>
-        <ng-container *ngIf="control.hasError('required')">
-        Este campo es requerido
-        </ng-container>
-        <!-- Validar si tiene minLenght -->
-        <ng-container *ngIf="control.hasError('minlength')">
-        Este campo debe tener al menos 6 caracteres
-        </ng-container>
-    </ng-template>
+<ng-template #errorEmail let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    Este campo es requerido
+  </ng-container>
+  <ng-container *ngIf="control.hasError('email')">
+    Este campo debe ser un email
+  </ng-container>
+</ng-template>
+
+<ng-template #errorPassword let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    Este campo es requerido
+  </ng-container>
+  <!-- Validar si tiene minLenght -->
+  <ng-container *ngIf="control.hasError('minlength')">
+    Este campo debe tener al menos 6 caracteres
+  </ng-container>
+</ng-template>

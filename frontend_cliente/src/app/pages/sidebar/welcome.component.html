@@ -1,45 +1,36 @@
 <nz-layout class="app-layout">
-    <nz-sider class="menu-sidebar"
-      nzCollapsible
-      nzWidth="256px"
-      nzBreakpoint="md"
-      [(nzCollapsed)]="isCollapsed"
-      [nzTrigger]="null">
-      <div class="sidebar-logo">
-        <a routerLink="/show">
-          <span nz-icon nzType="safety" nzTheme="outline"></span>
-          <h1>Ficticia S.A.</h1>
-        </a>
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a routerLink="/show">
+        <span nz-icon nzType="safety" nzTheme="outline"></span>
+        <h1>Ficticia S.A.</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Clientes" nzIcon="user">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/show">Listado</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+        </span>
+        <div class="header-right">
+          <button nz-button nzType="link" (click)="onClickLogout()">Logout <span nz-icon nzType="logout" nzTheme="outline"></span></button>
+        </div>
       </div>
-      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-submenu nzOpen nzTitle="Clientes" nzIcon="user">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a routerLink="/show">Listado</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nz-sider>
-    <nz-layout>
-      <nz-header>
-        <div class="app-header">
-          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-              <span class="trigger"
-                 nz-icon
-                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-              ></span>
-          </span>
-          <div class="header-right">
-            <button nz-button nzType="link" (click)="onClickLogout()">Logout <span nz-icon nzType="logout" nzTheme="outline"></span></button>
-          </div>
-        </div>
-      </nz-header>
-      <nz-content>
-        <div class="inner-content">
-          <ng-content></ng-content>
-        </div>
-      </nz-content>
-    </nz-layout>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <ng-content></ng-content>
+      </div>
+    </nz-content>
   </nz-layout>
-  
+</nz-layout>

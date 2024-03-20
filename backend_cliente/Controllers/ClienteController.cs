@@ -26,6 +26,7 @@ namespace backend_cliente.Controllers
             return gCliente.searchClienteId(id);
         }
 
+        // GET: api/Cliente/search?data=
         [Route("api/Cliente/search")]
         public IEnumerable<Cliente> Get([FromUri] string data)
         {

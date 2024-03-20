@@ -7,7 +7,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
   formReg: FormGroup;
@@ -20,13 +20,14 @@ export class RegisterComponent {
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
-      password: new FormControl()
-    })
+      password: new FormControl(),
+    });
   }
 
   signup() {
-    this.userService.register(this.formReg.value)
-      .then(response => {
+    this.userService
+      .register(this.formReg.value)
+      .then((response) => {
         console.log(response);
         this.userService.logout();
         this.router.navigate(['/login']);
@@ -36,7 +37,7 @@ export class RegisterComponent {
           'El usuario ha sido registrado con exito.'
         );
       })
-      .catch((error) =>{
+      .catch((error) => {
         console.log(error);
         if (error.code === 'auth/email-already-in-use') {
           this.notification.create(
@@ -44,31 +45,31 @@ export class RegisterComponent {
             'Error al registrar',
             'El correo ya esta en uso.'
           );
-        }else if (error.code === 'auth/invalid-email') {
+        } else if (error.code === 'auth/invalid-email') {
           this.notification.create(
             'error',
             'Error al registrar',
             'El correo no es valido.'
           );
-        }else if (error.code === 'auth/weak-password') {
+        } else if (error.code === 'auth/weak-password') {
           this.notification.create(
             'error',
             'Error al registrar',
             'La contraseña debe tener al menos 6 caracteres.'
           );
-        }else if (error.code === 'auth/missing-email') {
+        } else if (error.code === 'auth/missing-email') {
           this.notification.create(
             'error',
             'Error al registrar',
             'El correo es requerido.'
           );
-        }else if (error.code === 'auth/missing-password') {
+        } else if (error.code === 'auth/missing-password') {
           this.notification.create(
             'error',
             'Error al registrar',
             'La contraseña es requerida.'
           );
-        }else{
+        } else {
           this.notification.create(
             'error',
             'Error al registrar',

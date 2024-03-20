@@ -9,33 +9,33 @@ import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 export class ClienteService {
   loading$ = new BehaviorSubject<boolean>(false);
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  url:string = "https://localhost:44314/api/Cliente"
+  url: string = "https://localhost:44314/api/Cliente"
 
-  getClientes(){
+  getClientes() {
     this.loading$.next(true);
-    return firstValueFrom( this.http.get(this.url)).finally(() => this.loading$.next(false));
+    return firstValueFrom(this.http.get(this.url)).finally(() => this.loading$.next(false));
   }
 
-  searchClienteId(id:number){
+  searchClienteId(id: number) {
     return this.http.get(this.url + `/${id}`);
   }
 
-  searchCliente(data:string){
+  searchCliente(data: string) {
     this.loading$.next(true);
     return firstValueFrom(this.http.get(this.url + `/search/?data=${data}`)).finally(() => this.loading$.next(false));
   }
 
-  addClientes(cliente:Cliente):Observable<Cliente>{
+  addClientes(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.url, cliente);
   }
 
-  updateClientes(id:number, cliente:Cliente):Observable<Cliente>{
+  updateClientes(id: number, cliente: Cliente): Observable<Cliente> {
     return this.http.put<Cliente>(this.url + '/' + id, cliente);
   }
 
-  deleteClientes(id:number){
+  deleteClientes(id: number) {
     return this.http.delete(this.url + `/${id}`);
   }
 }
