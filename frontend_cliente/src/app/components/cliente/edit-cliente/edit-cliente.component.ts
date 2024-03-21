@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from '../../../services/cliente.service';
 import { Cliente } from '../../../models/cliente';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
@@ -23,11 +23,11 @@ export class EditClienteComponent {
   ) {
     this.formCliente = new FormGroup({
       idCliente: new FormControl(''),
-      nombreCompleto: new FormControl(''),
-      identificacion: new FormControl(''),
-      edad: new FormControl(''),
-      genero: new FormControl(),
-      estado: new FormControl(),
+      nombreCompleto: new FormControl('', [ Validators.required, Validators.maxLength(100) ]),
+      identificacion: new FormControl('', [ Validators.required, Validators.maxLength(20) ]),
+      edad: new FormControl('', Validators.required),
+      genero: new FormControl('', Validators.required),
+      estado: new FormControl('', Validators.required),
       maneja: new FormControl(),
       usaLentes: new FormControl(),
       diabetico: new FormControl(),

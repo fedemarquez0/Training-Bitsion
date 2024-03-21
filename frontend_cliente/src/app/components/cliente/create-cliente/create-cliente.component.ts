@@ -21,14 +21,8 @@ export class CreateClienteComponent {
   ) {
     this.formCliente = new FormGroup({
       idCliente: new FormControl(''),
-      nombreCompleto: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(100),
-      ]),
-      identificacion: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(20),
-      ]),
+      nombreCompleto: new FormControl('', [ Validators.required, Validators.maxLength(100) ]),
+      identificacion: new FormControl('', [ Validators.required, Validators.maxLength(20) ]),
       edad: new FormControl('', Validators.required),
       genero: new FormControl('', Validators.required),
       estado: new FormControl('', Validators.required),
